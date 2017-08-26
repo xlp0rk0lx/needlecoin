@@ -1,0 +1,11 @@
+[Protocol]
+exec=NeedleCoin-qt '%u'
+protocol=NeedleCoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: NeedleCoin
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# NeedleCoin_enable (bool): Set to NO by default. Set this variable to YES if you want to enable NeedleCoin service.
+# NeedleCoin_config (path): Set to /usr/local/etc/NeedleCoin.conf by default.
+# NeedleCoin_user:  The user account NeedleCoin daemon runs as. It uses 'root' user by default.
+# NeedleCoin_group: The group account NeedleCoin daemon runs as. It uses 'wheel' group by default.
+# NeedleCoin_datadir (str): Default to "/var/db/NeedleCoin". Base data directory.
+
+. /etc/rc.subr
+
+name=NeedleCoin
+rcvar=NeedleCoin_enable
+
+: ${NeedleCoin_enable:=NO}
+: ${NeedleCoin_config=/usr/local/etc/NeedleCoin.conf}
+: ${NeedleCoin_datadir=/var/db/NeedleCoin}
+: ${NeedleCoin_user="root"}
+: ${NeedleCoin_group="wheel"}
+
+required_files=${NeedleCoin_config}
+command=/usr/local/bin/NeedleCoind
+NeedleCoin_chdir=${NeedleCoin_datadir}
+pidfile="${NeedleCoin_datadir}/NeedleCoind.pid"
+stop_cmd=NeedleCoin_stop
+command_args="-conf=${NeedleCoin_config} -datadir=${NeedleCoin_datadir} -daemon -pid=${pidfile}"
+start_precmd="${name}_prestart"
+
+NeedleCoin_create_datadir()
+{
+	echo "Creating data directory"
+	eval mkdir -p ${NeedleCoin_datadir}
+	[ $? -eq 0 ] && chown -R ${NeedleCoin_user}:${NeedleCoin_group} ${NeedleCoin_datadir}
+}
+
+NeedleCoin_prestart()
+{
+	if [ ! -d "${NeedleCoin_datadir}/." ]; then
+		NeedleCoin_create_datadir || return 1
+	fi
+}
+
+NeedleCoin_requirepidfile()
+{
+	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
+		echo "${name} not running? (check $pidfile)."
+		exit 1
+	fi
+}
+
+NeedleCoin_stop()
+{
+    NeedleCoin_requirepidfile
+
+	echo "Stopping ${name}."
+	eval ${command} -conf=${NeedleCoin_config} -datadir=${NeedleCoin_datadir} stop
+	wait_for_pids ${rc_pid}
+}
+
+load_rc_config $name
+run_rc_command "$1"

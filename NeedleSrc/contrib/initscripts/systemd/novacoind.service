@@ -1,0 +1,11 @@
+[Unit]
+Description=Novacoin daemon serivce
+After=network.target
+
+[Service]
+Type=simple
+User=NeedleCoin
+ExecStart=/opt/NeedleCoin/NeedleCoind
+
+[Install]
+WantedBy=multi-user.target

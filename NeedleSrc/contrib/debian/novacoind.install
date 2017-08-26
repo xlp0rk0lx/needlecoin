@@ -1,0 +1,2 @@
+debian/bin/NeedleCoind usr/bin
+src/NeedleCoind usr/lib/NeedleCoin

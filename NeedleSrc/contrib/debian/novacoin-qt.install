@@ -1,0 +1,5 @@
+NeedleCoin-qt usr/bin
+share/pixmaps/NeedleCoin32.xpm usr/share/pixmaps
+share/pixmaps/NeedleCoin80.xpm usr/share/pixmaps
+debian/NeedleCoin-qt.desktop usr/share/applications
+debian/NeedleCoin-qt.protocol usr/share/kde4/services/
