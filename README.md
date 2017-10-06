@@ -1,0 +1,2 @@
+# needlecoin
+NeedleCoin's Project
