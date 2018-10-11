@@ -1113,7 +1113,8 @@ luffa3_close(sph_luffa224_context *sc, unsigned ub, unsigned n,
 		P3;
 		memset(buf, 0, sizeof sc->buf);
 	}
-	out = dst;
+
+	out =(unsigned char*) dst;
 	sph_enc32be(out +  0, V00 ^ V10 ^ V20);
 	sph_enc32be(out +  4, V01 ^ V11 ^ V21);
 	sph_enc32be(out +  8, V02 ^ V12 ^ V22);
@@ -1173,7 +1174,7 @@ luffa4_close(sph_luffa384_context *sc, unsigned ub, unsigned n, void *dst)
 
 	buf = sc->buf;
 	ptr = sc->ptr;
-	out = dst;
+	out =(unsigned char*) dst;
 	z = 0x80 >> n;
 	buf[ptr ++] = ((ub & -z) | z) & 0xFF;
 	memset(buf + ptr, 0, (sizeof sc->buf) - ptr);
@@ -1295,7 +1296,7 @@ sph_luffa224_init(void *cc)
 {
 	sph_luffa224_context *sc;
 
-	sc = cc;
+	sc =(sph_luffa224_context*) cc;
 	memcpy(sc->V, V_INIT, sizeof(sc->V));
 	sc->ptr = 0;
 }
