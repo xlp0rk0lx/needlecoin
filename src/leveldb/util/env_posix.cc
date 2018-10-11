@@ -1,7 +1,6 @@
 // Copyright (c) 2011 The LevelDB Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
-#if !defined(LEVELDB_PLATFORM_WINDOWS)
 
 #include <dirent.h>
 #include <errno.h>
@@ -351,6 +350,19 @@ class PosixEnv : public Env {
     return s;
   }
 
+  virtual Status NewAppendableFile(const std::string& fname,
+                                   WritableFile** result) {
+    Status s;
+    FILE* f = fopen(fname.c_str(), "a");
+    if (f == NULL) {
+      *result = NULL;
+      s = IOError(fname, errno);
+    } else {
+      *result = new PosixWritableFile(fname, f);
+    }
+    return s;
+  }
+
   virtual bool FileExists(const std::string& fname) {
     return access(fname.c_str(), F_OK) == 0;
   }
@@ -604,5 +616,3 @@ Env* Env::Default() {
 }
 
 }  // namespace leveldb
-
-#endif
