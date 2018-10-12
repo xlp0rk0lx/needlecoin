@@ -608,7 +608,7 @@ public:
         {
             LOCK(cs);
             Check();
-            for (std::vector<CAddress>::const_iterator it = vAddr.begin(); it != vAddr.end(); it++)
+            for (std::vector<CAddress>::const_iterator it = vAddr.begin(); it != vAddr.end(); ++it)
                 nAdd += Add_(*it, source, nTimePenalty) ? 1 : 0;
             Check();
         }

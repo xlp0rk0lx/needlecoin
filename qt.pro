@@ -174,10 +174,10 @@ contains(USE_ASM, 1) {
 
 contains(USE_O3, 1) {
     message(Building O3 optimization flag)
-    QMAKE_CXXFLAGS_RELEASE -= -O2
-    QMAKE_CFLAGS_RELEASE -= -O2
-    QMAKE_CXXFLAGS += -O3
-    QMAKE_CFLAGS += -O3
+    QMAKE_CXXFLAGS_RELEASE -= -Ofast
+    QMAKE_CFLAGS_RELEASE -= -Ofast
+    QMAKE_CXXFLAGS += -Ofast
+    QMAKE_CFLAGS += -Ofast
 }
 
 
