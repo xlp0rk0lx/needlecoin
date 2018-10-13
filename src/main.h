@@ -34,6 +34,10 @@ class CNode;
 // Global state
 //
 
+// Little hack for speedup sync
+static const int SKIP_VALIDATION_HEIGHT = 105347;
+
+
 static const int LAST_POW_BLOCK = 2147483646; // PoW always on
 
 static const unsigned int MAX_BLOCK_SIZE = 1000000;
@@ -1138,7 +1142,7 @@ public:
     bool ReadFromDisk(const CBlockIndex* pindex, bool fReadTransactions=true);
     bool SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew);
     bool AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos);
-    bool CheckBlock(bool fCheckPOW=true, bool fCheckMerkleRoot=true, bool fCheckSig=true) const;
+    bool CheckBlock(bool fCheckPOW=true, bool fCheckMerkleRoot=true, bool fCheckSig=true,int height=1) const;
     bool AcceptBlock();
     bool GetCoinAge(uint64_t& nCoinAge) const; // ppcoin: calculate total coin age spent in block
     bool CheckBlockSignature() const;
