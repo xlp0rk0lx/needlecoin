@@ -1,6 +1,7 @@
+build/
 src/NeedleCoind
 *.d
-
+NeedleCoin-qt
 # Compiled Object files
 *.slo
 *.lo
