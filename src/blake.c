@@ -884,7 +884,7 @@ blake32_close(sph_blake_small_context *sc,
 		blake32(sc, u.buf, 64);
 	}
 	out =(unsigned char*) dst;
-	for (k = 0; k < out_size_w32; k ++)
+	for (k = 0; k < out_size_w32; ++k )
 		sph_enc32be(out + (k << 2), sc->H[k]);
 }
 
@@ -989,7 +989,7 @@ blake64_close(sph_blake_big_context *sc,
 		blake64(sc, u.buf, 128);
 	}
 	out =(unsigned char*) dst;
-	for (k = 0; k < out_size_w64; k ++)
+	for (k = 0; k < out_size_w64; ++k )
 		sph_enc64be(out + (k << 3), sc->H[k]);
 }
 

@@ -98,7 +98,7 @@ public:
             while (mi != mapKeys.end())
             {
                 setAddress.insert((*mi).first);
-                mi++;
+                ++mi;
             }
         }
     }
@@ -200,7 +200,7 @@ public:
         while (mi != mapCryptedKeys.end())
         {
             setAddress.insert((*mi).first);
-            mi++;
+            ++mi;
         }
     }
 

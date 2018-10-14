@@ -167,7 +167,7 @@ public:
         }
 
         bool fLeadingZeroes = true;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; ++i)
         {
             uint8_t c = (n >> 56) & 0xff;
             n <<= 8;
@@ -201,7 +201,7 @@ public:
         if (vch.size() > 4)
             vch[4] &= 0x7f;
         uint64_t n = 0;
-        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; i++, j--)
+        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; ++i, --j)
             ((uint8_t*)&n)[i] = vch[j];
         return n;
     }
@@ -219,7 +219,7 @@ public:
         uint8_t pch[sizeof(n) + 6];
         uint8_t* p = pch + 4;
         bool fLeadingZeroes = true;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; ++i)
         {
             uint8_t c = (n >> 56) & 0xff;
             n <<= 8;
@@ -279,7 +279,7 @@ public:
         if (vch.size() > 4)
             vch[4] &= 0x7f;
         uint160 n = 0;
-        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; i++, j--)
+        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; ++i, --j)
             ((uint8_t*)&n)[i] = vch[j];
         return n;
     }
@@ -322,7 +322,7 @@ public:
         if (vch.size() > 4)
             vch[4] &= 0x7f;
         uint256 n = 0;
-        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; i++, j--)
+        for (size_t i = 0, j = vch.size()-1; i < sizeof(n) && j >= 4; ++i, --j)
             ((uint8_t*)&n)[i] = vch[j];
         return n;
     }
@@ -403,17 +403,17 @@ public:
         // skip 0x
         const char* psz = str.c_str();
         while (isspace(*psz))
-            psz++;
+            ++psz;
         bool fNegative = false;
         if (*psz == '-')
         {
             fNegative = true;
-            psz++;
+            ++psz;
         }
         if (psz[0] == '0' && tolower(psz[1]) == 'x')
             psz += 2;
         while (isspace(*psz))
-            psz++;
+            ++psz;
 
         // hex string to bignum
         static const signed char phexdigit[256] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,1,2,3,4,5,6,7,8,9,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, 0,0xa,0xb,0xc,0xd,0xe,0xf,0,0,0,0,0,0,0,0,0 };

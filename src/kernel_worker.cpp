@@ -109,7 +109,7 @@ inline void copyrow4_swap32(uint32_t *to, uint32_t *from)
 {
     if (!fUseSSSE3)
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; ++i)
             to[i] = __builtin_bswap32(from[i]);
     }
     else
@@ -121,7 +121,7 @@ inline void copyrow4_swap32(uint32_t *to, uint32_t *from)
 #else
 inline void copyrow4_swap32(uint32_t *to, uint32_t *from)
 {
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; ++i)
         to[i] = __builtin_bswap32(from[i]);
 }
 #endif
@@ -157,7 +157,7 @@ void KernelWorker::Do_8way()
     vector<uint32_t> vRow = vector<uint32_t>(8);
     uint32_t *pnKernel = (uint32_t *) kernel;
 
-    for(int i = 0; i < 7; i++)
+    for(int i = 0; i < 7; ++i)
     {
         fill(vRow.begin(), vRow.end(), pnKernel[i]);
         copyrow8_swap32(&blocks1[i*8], &vRow[0]);
@@ -190,14 +190,14 @@ void KernelWorker::Do_8way()
         sha256_transform_8way(&candidates[0], &blocks2[0], 0); // second hashing
         copyrow8_swap32(&nHashes[0], &candidates[56]);
 
-        for(int nResult = 0; nResult < 8; nResult++)
+        for(int nResult = 0; nResult < 8; ++nResult)
         {
             if (nHashes[nResult] <= nMaxTarget32) // Possible hit
             {
                 uint256 nHashProofOfStake = 0;
                 uint32_t *pnHashProofOfStake = (uint32_t *) &nHashProofOfStake;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 7; ++i)
                     pnHashProofOfStake[i] = __builtin_bswap32(candidates[(i*8) + nResult]);
                 pnHashProofOfStake[7] = nHashes[nResult];
 
@@ -234,7 +234,7 @@ void KernelWorker::Do_4way()
     vector<uint32_t> vRow = vector<uint32_t>(4);
     uint32_t *pnKernel = (uint32_t *) kernel;
 
-    for(int i = 0; i < 7; i++)
+    for(int i = 0; i < 7; ++i)
     {
         fill(vRow.begin(), vRow.end(), pnKernel[i]);
         copyrow4_swap32(&blocks1[i*4], &vRow[0]);
@@ -263,14 +263,14 @@ void KernelWorker::Do_4way()
         sha256_transform_4way(&candidates[0], &blocks2[0], 0); // second hashing
         copyrow4_swap32(&nHashes[0], &candidates[28]);
 
-        for(int nResult = 0; nResult < 4; nResult++)
+        for(int nResult = 0; nResult < 4; ++nResult)
         {
             if (nHashes[nResult] <= nMaxTarget32) // Possible hit
             {
                 uint256 nHashProofOfStake = 0;
                 uint32_t *pnHashProofOfStake = (uint32_t *) &nHashProofOfStake;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 7; ++i)
                     pnHashProofOfStake[i] = __builtin_bswap32(candidates[(i*4) + nResult]);
                 pnHashProofOfStake[7] = nHashes[nResult];
 
@@ -308,7 +308,7 @@ void KernelWorker::Do_generic()
 
     // Search forward in time from the given timestamp
     // Stopping search in case of shutting down
-    for (uint32_t nTimeTx=nIntervalBegin, nMaxTarget32 = nMaxTarget.Get32(7); nTimeTx<nIntervalEnd && !fShutdown; nTimeTx++)
+    for (uint32_t nTimeTx=nIntervalBegin, nMaxTarget32 = nMaxTarget.Get32(7); nTimeTx<nIntervalEnd && !fShutdown; ++nTimeTx)
     {
         // Complete first hashing iteration
         uint256 hash1;
@@ -348,12 +348,12 @@ void KernelWorker::Do_generic()
 
     uint32_t *pnKernel = (uint32_t *) kernel;
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 6; ++i)
         block1[i] = __builtin_bswap32(pnKernel[i]);
 
     // Search forward in time from the given timestamp
     // Stopping search in case of shutting down
-    for (uint32_t nTimeTx=nIntervalBegin, nMaxTarget32 = nMaxTarget.Get32(7); nTimeTx<nIntervalEnd && !fShutdown; nTimeTx++)
+    for (uint32_t nTimeTx=nIntervalBegin, nMaxTarget32 = nMaxTarget.Get32(7); nTimeTx<nIntervalEnd && !fShutdown; ++nTimeTx)
     {
         memcpy(&block2[0], &sha256_initial[0], 32);
         memcpy(&candidate[0], &sha256_initial[0], 32);
@@ -372,7 +372,7 @@ void KernelWorker::Do_generic()
         uint256 nHashProofOfStake;
         uint32_t *pnHashProofOfStake = (uint32_t *) &nHashProofOfStake;
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 7; ++i)
             pnHashProofOfStake[i] = __builtin_bswap32(candidate[i]);
         pnHashProofOfStake[7] = nHash7;
 
@@ -437,7 +437,7 @@ bool ScanKernelBackward_8Way(unsigned char *kernel, uint32_t nBits, uint32_t nIn
     vector<uint32_t> vRow = vector<uint32_t>(8);
     uint32_t *pnKernel = (uint32_t *) kernel;
 
-    for(int i = 0; i < 7; i++)
+    for(int i = 0; i < 7; ++i)
     {
         fill(vRow.begin(), vRow.end(), pnKernel[i]);
         copyrow8_swap32(&blocks1[i*8], &vRow[0]);
@@ -470,14 +470,14 @@ bool ScanKernelBackward_8Way(unsigned char *kernel, uint32_t nBits, uint32_t nIn
         sha256_transform_8way(&candidates[0], &blocks2[0], 0); // second hashing
         copyrow8_swap32(&nHashes[0], &candidates[56]);
 
-        for(int nResult = 0; nResult < 8; nResult++)
+        for(int nResult = 0; nResult < 8; ++nResult)
         {
             if (nHashes[nResult] <= nMaxTarget32) // Possible hit
             {
                 uint256 nHashProofOfStake = 0;
                 uint32_t *pnHashProofOfStake = (uint32_t *) &nHashProofOfStake;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 7; ++i)
                     pnHashProofOfStake[i] = __builtin_bswap32(candidates[(i*8) + nResult]);
                 pnHashProofOfStake[7] = nHashes[nResult];
 
@@ -522,7 +522,7 @@ bool ScanKernelBackward_4Way(unsigned char *kernel, uint32_t nBits, uint32_t nIn
     vector<uint32_t> vRow = vector<uint32_t>(4);
     uint32_t *pnKernel = (uint32_t *) kernel;
 
-    for(int i = 0; i < 7; i++)
+    for(int i = 0; i < 7; ++i)
     {
         fill(vRow.begin(), vRow.end(), pnKernel[i]);
         copyrow4_swap32(&blocks1[i*4], &vRow[0]);
@@ -551,14 +551,14 @@ bool ScanKernelBackward_4Way(unsigned char *kernel, uint32_t nBits, uint32_t nIn
         sha256_transform_4way(&candidates[0], &blocks2[0], 0); // second hashing
         copyrow4_swap32(&nHashes[0], &candidates[28]);
 
-        for(int nResult = 0; nResult < 4; nResult++)
+        for(int nResult = 0; nResult < 4; ++nResult)
         {
             if (nHashes[nResult] <= nMaxTarget32) // Possible hit
             {
                 uint256 nHashProofOfStake = 0;
                 uint32_t *pnHashProofOfStake = (uint32_t *) &nHashProofOfStake;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 7; ++i)
                     pnHashProofOfStake[i] = __builtin_bswap32(candidates[(i*4) + nResult]);
                 pnHashProofOfStake[7] = nHashes[nResult];
 

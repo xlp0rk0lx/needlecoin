@@ -40,7 +40,7 @@ vector<KernelRecord> KernelRecord::decomposeOutput(const CWallet *wallet, const 
                                                                                                               // правильный расчёт CoinAge
     if (showTransaction(wtx))
     {
-        for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
+        for (unsigned int nOut = 0; nOut < wtx.vout.size(); ++nOut)
         {
             CTxOut txOut = wtx.vout[nOut];
             if( wallet->IsMine(txOut) ) {
@@ -122,7 +122,7 @@ double KernelRecord::getProbToMintWithinNMinutes(double difficulty, int minutes)
         int i, timeOffset;
 
         // Probabilities for the first d days
-        for(i = 0; i < d; i++)
+        for(i = 0; i < d; ++i)
         {
             timeOffset = i * 86400;
             p = pow(1 - getProbToMintStake(difficulty, timeOffset), 86400);

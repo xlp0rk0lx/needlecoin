@@ -570,7 +570,7 @@ public:
     bool UpdateSpent(const std::vector<char>& vfNewSpent)
     {
         bool fReturn = false;
-        for (unsigned int i = 0; i < vfNewSpent.size(); i++)
+        for (unsigned int i = 0; i < vfNewSpent.size(); ++i)
         {
             if (i == vfSpent.size())
                 break;
@@ -739,7 +739,7 @@ public:
         }
 
         int64_t nCredit = 0;
-        for (unsigned int i = 0; i < vout.size(); i++)
+        for (unsigned int i = 0; i < vout.size(); ++i)
         {
             if (!IsSpent(i))
             {
@@ -768,7 +768,7 @@ public:
         }
 
         int64_t nCredit = 0;
-        for (unsigned int i = 0; i < vout.size(); i++)
+        for (unsigned int i = 0; i < vout.size(); ++i)
         {
             if (!IsSpent(i))
             {
@@ -821,7 +821,7 @@ public:
         std::vector<const CMerkleTx*> vWorkQueue;
         vWorkQueue.reserve(vtxPrev.size()+1);
         vWorkQueue.push_back(this);
-        for (unsigned int i = 0; i < vWorkQueue.size(); i++)
+        for (unsigned int i = 0; i < vWorkQueue.size(); ++i)
         {
             const CMerkleTx* ptx = vWorkQueue[i];
 

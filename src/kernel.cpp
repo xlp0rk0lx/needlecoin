@@ -119,7 +119,7 @@ static int64_t GetStakeModifierSelectionIntervalSection(int nSection)
 static int64_t GetStakeModifierSelectionInterval()
 {
     int64_t nSelectionInterval = 0;
-    for (int nSection=0; nSection<64; nSection++)
+    for (int nSection=0; nSection<64; ++nSection)
         nSelectionInterval += GetStakeModifierSelectionIntervalSection(nSection);
     return nSelectionInterval;
 }
@@ -250,7 +250,7 @@ bool ComputeNextStakeModifier(const CBlockIndex* pindexCurrent, uint64_t& nStake
     uint64_t nStakeModifierNew = 0;
     int64_t nSelectionIntervalStop = nSelectionIntervalStart;
     map<uint256, const CBlockIndex*> mapSelectedBlocks;
-    for (int nRound=0; nRound<min(64, (int)vSortedByTimestamp.size()); nRound++)
+    for (int nRound=0; nRound<min(64, (int)vSortedByTimestamp.size()); ++nRound)
     {
         // add an interval section to the current selection round
         nSelectionIntervalStop += GetStakeModifierSelectionIntervalSection(nRound);
@@ -434,7 +434,7 @@ bool ScanKernelForward(unsigned char *kernel, uint32_t nBits, uint32_t nInputTxT
     KernelWorker *workers = new KernelWorker[nThreads];
 
     boost::thread_group group;
-    for(size_t i = 0; i < nThreads; i++)
+    for(size_t i = 0; i < nThreads; ++i)
     {
         uint32_t nBegin = SearchInterval.first + nPart * i;
         uint32_t nEnd = SearchInterval.first + nPart * (i + 1);
@@ -446,7 +446,7 @@ bool ScanKernelForward(unsigned char *kernel, uint32_t nBits, uint32_t nInputTxT
     group.join_all();
     solutions.clear();
 
-    for(size_t i = 0; i < nThreads; i++)
+    for(size_t i = 0; i < nThreads; ++i)
     {
         std::vector<std::pair<uint256, uint32_t> > ws = workers[i].GetSolutions();
         solutions.insert(solutions.end(), ws.begin(), ws.end());

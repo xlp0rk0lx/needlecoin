@@ -592,14 +592,14 @@ cubehash_close(sph_cubehash_context *sc, unsigned ub, unsigned n,
 	memset(buf + ptr, 0, (sizeof sc->buf) - ptr);
 	READ_STATE(sc);
 	INPUT_BLOCK;
-	for (i = 0; i < 11; i ++) {
+	for (i = 0; i < 11; ++i) {
 		SIXTEEN_ROUNDS;
 		if (i == 0)
 			xv ^= SPH_C32(1);
 	}
 	WRITE_STATE(sc);
 	out = dst;
-	for (z = 0; z < out_size_w32; z ++)
+	for (z = 0; z < out_size_w32; ++z)
 		sph_enc32le(out + (z << 2), sc->state[z]);
 }
 

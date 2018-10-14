@@ -2,6 +2,9 @@ build/
 src/NeedleCoind
 *.d
 NeedleCoin-qt
+src/leveldb/out-static/*
+src/leveldb/out-shared/*
+
 # Compiled Object files
 *.slo
 *.lo

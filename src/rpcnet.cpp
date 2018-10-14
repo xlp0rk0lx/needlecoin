@@ -158,7 +158,7 @@ Value addnode(const Array& params, bool fHelp)
 
     LOCK(cs_vAddedNodes);
     vector<string>::iterator it = vAddedNodes.begin();
-    for(; it != vAddedNodes.end(); it++)
+    for(; it != vAddedNodes.end(); ++it)
         if (strNode == *it)
             break;
 
@@ -238,7 +238,7 @@ Value getaddednodeinfo(const Array& params, bool fHelp)
         }
 
     LOCK(cs_vNodes);
-    for (list<pair<string, vector<CService> > >::iterator it = laddedAddreses.begin(); it != laddedAddreses.end(); it++)
+    for (list<pair<string, vector<CService> > >::iterator it = laddedAddreses.begin(); it != laddedAddreses.end(); ++it)
     {
         Object obj;
         obj.push_back(Pair("addednode", it->first));

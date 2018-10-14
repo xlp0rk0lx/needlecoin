@@ -36,7 +36,7 @@ double GetDifficulty(const CBlockIndex* blockindex)
     while (nShift < 29)
     {
         dDiff *= 256.0;
-        nShift++;
+        ++nShift;
     }
     while (nShift > 29)
     {
@@ -90,7 +90,7 @@ double GetPoSKernelPS()
             dStakeKernelsTriedAvg += GetDifficulty(pindex) * 4294967296.0;
             nStakesTime += pindexPrevStake ? (pindexPrevStake->nTime - pindex->nTime) : 0;
             pindexPrevStake = pindex;
-            nStakesHandled++;
+            ++nStakesHandled;
         }
 
         pindex = pindex->pprev;

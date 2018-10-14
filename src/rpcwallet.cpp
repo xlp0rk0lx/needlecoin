@@ -827,7 +827,7 @@ Value addmultisigaddress(const Array& params, bool fHelp)
         throw runtime_error("Number of addresses involved in the multisignature address creation > 16\nReduce the number");
     std::vector<CKey> pubkeys;
     pubkeys.resize(keys.size());
-    for (unsigned int i = 0; i < keys.size(); i++)
+    for (unsigned int i = 0; i < keys.size(); ++i)
     {
         const std::string& ks = keys[i].get_str();
 
@@ -1305,7 +1305,7 @@ Value listsinceblock(const Array& params, bool fHelp)
 
     Array transactions;
 
-    for (map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); it++)
+    for (map<uint256, CWalletTx>::iterator it = pwalletMain->mapWallet.begin(); it != pwalletMain->mapWallet.end(); ++it)
     {
         CWalletTx tx = (*it).second;
 

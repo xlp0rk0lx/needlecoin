@@ -640,7 +640,7 @@ bmw32(sph_bmw_small_context *sc, const void *data, size_t len)
 	tmp = sc->bit_count_low;
 	sc->bit_count_low = SPH_T32(tmp + ((sph_u32)len << 3));
 	if (sc->bit_count_low < tmp)
-		sc->bit_count_high ++;
+		++sc->bit_count_high;
 	sc->bit_count_high += len >> 29;
 #endif
 	buf = sc->buf;
@@ -703,11 +703,11 @@ bmw32_close(sph_bmw_small_context *sc, unsigned ub, unsigned n,
 		SPH_T32(sc->bit_count_high));
 #endif
 	compress_small(buf, h, h2);
-	for (u = 0; u < 16; u ++)
+	for (u = 0; u < 16; ++u )
 		sph_enc32le_aligned(buf + 4 * u, h2[u]);
 	compress_small(buf, final_s, h1);
 	out =(unsigned char *) dst;
-	for (u = 0, v = 16 - out_size_w32; u < out_size_w32; u ++, v ++)
+	for (u = 0, v = 16 - out_size_w32; u < out_size_w32; ++u,++v)
 		sph_enc32le(out + 4 * u, h1[v]);
 }
 
@@ -830,11 +830,11 @@ bmw64_close(sph_bmw_big_context *sc, unsigned ub, unsigned n,
 	sph_enc64le_aligned(buf + (sizeof sc->buf) - 8,
 		SPH_T64(sc->bit_count + n));
 	compress_big(buf, h, h2);
-	for (u = 0; u < 16; u ++)
+	for (u = 0; u < 16; ++u)
 		sph_enc64le_aligned(buf + 8 * u, h2[u]);
 	compress_big(buf, final_b, h1);
 	out =(unsigned char *) dst;
-	for (u = 0, v = 16 - out_size_w64; u < out_size_w64; u ++, v ++)
+	for (u = 0, v = 16 - out_size_w64; u < out_size_w64; ++u, ++v)
 		sph_enc64le(out + 8 * u, h1[v]);
 }
 

@@ -71,7 +71,7 @@ void RPCTypeCheck(const Array& params,
                                    Value_type_name[t], Value_type_name[v.type()]);
             throw JSONRPCError(RPC_TYPE_ERROR, err);
         }
-        i++;
+        ++i;
     }
 }
 
@@ -322,7 +322,7 @@ static const CRPCCommand vRPCCommands[] =
 CRPCTable::CRPCTable()
 {
     unsigned int vcidx;
-    for (vcidx = 0; vcidx < (sizeof(vRPCCommands) / sizeof(vRPCCommands[0])); vcidx++)
+    for (vcidx = 0; vcidx < (sizeof(vRPCCommands) / sizeof(vRPCCommands[0])); ++vcidx)
     {
         const CRPCCommand *pcmd;
 
@@ -676,15 +676,15 @@ void ThreadRPCServer(void* parg)
 
     try
     {
-        vnThreadsRunning[THREAD_RPCLISTENER]++;
+        ++vnThreadsRunning[THREAD_RPCLISTENER];
         ThreadRPCServer2(parg);
-        vnThreadsRunning[THREAD_RPCLISTENER]--;
+        --vnThreadsRunning[THREAD_RPCLISTENER];
     }
     catch (std::exception& e) {
-        vnThreadsRunning[THREAD_RPCLISTENER]--;
+        --vnThreadsRunning[THREAD_RPCLISTENER];
         PrintException(&e, "ThreadRPCServer()");
     } catch (...) {
-        vnThreadsRunning[THREAD_RPCLISTENER]--;
+        --vnThreadsRunning[THREAD_RPCLISTENER];
         PrintException(NULL, "ThreadRPCServer()");
     }
     printf("ThreadRPCServer exited\n");
@@ -730,7 +730,7 @@ static void RPCAcceptHandler(boost::shared_ptr< basic_socket_acceptor<Protocol, 
                              AcceptedConnection* conn,
                              const boost::system::error_code& error)
 {
-    vnThreadsRunning[THREAD_RPCLISTENER]++;
+    ++vnThreadsRunning[THREAD_RPCLISTENER];
 
     // Immediately start accepting new connections, except when we're cancelled or our socket is closed.
     if (error != asio::error::operation_aborted
@@ -886,10 +886,10 @@ void ThreadRPCServer2(void* parg)
         return;
     }
 
-    vnThreadsRunning[THREAD_RPCLISTENER]--;
+    --vnThreadsRunning[THREAD_RPCLISTENER];
     while (!fShutdown)
         io_service.run_one();
-    vnThreadsRunning[THREAD_RPCLISTENER]++;
+    ++vnThreadsRunning[THREAD_RPCLISTENER];
     StopRequests();
 }
 
@@ -961,7 +961,7 @@ static Object JSONRPCExecOne(const Value& req)
 static string JSONRPCExecBatch(const Array& vReq)
 {
     Array ret;
-    for (unsigned int reqIdx = 0; reqIdx < vReq.size(); reqIdx++)
+    for (unsigned int reqIdx = 0; reqIdx < vReq.size(); ++reqIdx)
         ret.push_back(JSONRPCExecOne(vReq[reqIdx]));
 
     return write_string(Value(ret), false) + "\n";
@@ -976,7 +976,7 @@ void ThreadRPCServer3(void* parg)
 
     {
         LOCK(cs_THREAD_RPCHANDLER);
-        vnThreadsRunning[THREAD_RPCHANDLER]++;
+        ++vnThreadsRunning[THREAD_RPCHANDLER];
     }
     AcceptedConnection *conn = (AcceptedConnection *) parg;
 
@@ -1257,8 +1257,8 @@ int CommandLineRPC(int argc, char *argv[])
         // Skip switches
         while (argc > 1 && IsSwitchChar(argv[1][0]))
         {
-            argc--;
-            argv++;
+            --argc;
+            ++argv;
         }
 
         // Method

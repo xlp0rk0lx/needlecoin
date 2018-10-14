@@ -295,7 +295,7 @@ bool InitWithHost(const std::string &strHostName, SOCKET &sockfd, socklen_t &ser
     servaddr.sin_port = htons(123);
 
     bool found = false;
-    for(unsigned int i = 0; i < vIP.size(); i++) {
+    for(unsigned int i = 0; i < vIP.size(); ++i) {
         if ((found = vIP[i].GetInAddr(&servaddr.sin_addr)) != false) {
             break;
         }
@@ -323,7 +323,7 @@ bool InitWithHost(const std::string &strHostName, SOCKET &sockfd, socklen_t &ser
 
 bool InitWithRandom(SOCKET &sockfd, socklen_t &servlen, struct sockaddr *pcliaddr) {
 
-    for (int nAttempt = 0; nAttempt < nServersCount; nAttempt++) {
+    for (int nAttempt = 0; nAttempt < nServersCount; ++nAttempt) {
         int nServerNum = GetRandInt(nServersCount);
         if (InitWithHost(NtpServers[nServerNum], sockfd, servlen, pcliaddr)) {
             return true;
@@ -458,7 +458,7 @@ void ThreadNtpSamples(void* parg) {
     }
 
     printf("ThreadNtpSamples started\n");
-    vnThreadsRunning[THREAD_NTP]++;
+    ++vnThreadsRunning[THREAD_NTP];
 
     // Make this thread recognisable as time synchronization thread
     RenameThread("NeedleCoin-ntp-samples");
@@ -481,7 +481,7 @@ void ThreadNtpSamples(void* parg) {
                 strTrustedUpstream = "localhost";
 
                 int nSleepMinutes = 1 + GetRandInt(9); // Sleep for 1-10 minutes.
-                for (int i = 0; i < nSleepMinutes * 60 && !fShutdown; i++)
+                for (int i = 0; i < nSleepMinutes * 60 && !fShutdown; ++i)
                     Sleep(1000);
 
                 continue;
@@ -491,7 +491,7 @@ void ThreadNtpSamples(void* parg) {
             // Now, trying to get 2-4 samples from random NTP servers.
             int nSamplesCount = 2 + GetRandInt(2);
 
-            for (int i = 0; i < nSamplesCount; i++) {
+            for (int i = 0; i < nSamplesCount; ++i) {
                 CNetAddr ip;
                 int64_t nClockOffset = NtpGetTime(ip) - GetTime();
 
@@ -508,7 +508,7 @@ void ThreadNtpSamples(void* parg) {
                 // Not enough offsets yet, try to collect additional samples later.
                 nNtpOffset = INT64_MAX;
                 int nSleepMinutes = 1 + GetRandInt(4); // Sleep for 1-5 minutes.
-                for (int i = 0; i < nSleepMinutes * 60 && !fShutdown; i++) 
+                for (int i = 0; i < nSleepMinutes * 60 && !fShutdown; ++i) 
                     Sleep(1000);
                 continue;
             }
@@ -526,7 +526,7 @@ void ThreadNtpSamples(void* parg) {
         printf("nNtpOffset = %+" PRId64 "  (%+" PRId64 " minutes)\n", nNtpOffset, nNtpOffset/60);
 
         int nSleepHours = 1 + GetRandInt(5); // Sleep for 1-6 hours.
-        for (int i = 0; i < nSleepHours * 3600 && !fShutdown; i++)
+        for (int i = 0; i < nSleepHours * 3600 && !fShutdown; ++i)
             Sleep(1000);
     }
 

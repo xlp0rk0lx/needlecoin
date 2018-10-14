@@ -937,11 +937,11 @@ jh_core(sph_jh_context *sc, const void *data, size_t len)
 			E8;
 			INPUT_BUF2;
 #if SPH_64
-			sc->block_count ++;
+			++sc->block_count;
 #else
 			if ((sc->block_count_low = SPH_T32(
 				sc->block_count_low + 1)) == 0)
-				sc->block_count_high ++;
+				++sc->block_count_high;
 #endif
 			ptr = 0;
 		}
@@ -989,10 +989,10 @@ jh_close(sph_jh_context *sc, unsigned ub, unsigned n,
 #endif
 	jh_core(sc, buf, numz + 17);
 #if SPH_JH_64
-	for (u = 0; u < 8; u ++)
+	for (u = 0; u < 8; ++u)
 		enc64e(buf + (u << 3), sc->H.wide[u + 8]);
 #else
-	for (u = 0; u < 16; u ++)
+	for (u = 0; u < 16; ++u)
 		enc32e(buf + (u << 2), sc->H.narrow[u + 16]);
 #endif
 	memcpy(dst, buf + ((16 - out_size_w32) << 2), out_size_w32 << 2);

@@ -492,7 +492,7 @@ void CDBEnv::Flush(bool fShutdown)
                 mapFileUseCount.erase(mi++);
             }
             else
-                mi++;
+                ++mi;
         }
         printf("DBFlush(%s)%s ended %15" PRId64 "ms\n", fShutdown ? "true" : "false", fDbEnvInit ? "" : " db not started", GetTimeMillis() - nStart);
         if (fShutdown)

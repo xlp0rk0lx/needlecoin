@@ -86,7 +86,7 @@ void Shutdown(void* parg)
     {
         fShutdown = true;
         fRequestShutdown = true;
-        nTransactionsUpdated++;
+        ++nTransactionsUpdated;
 //        CTxDB().Close();
         bitdb.Flush(false);
         StopNode();
@@ -165,7 +165,7 @@ bool AppInit(int argc, char* argv[])
         }
 
         // Command-line RPC
-        for (int i = 1; i < argc; i++)
+        for (int i = 1; i < argc; ++i)
             if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "NeedleCoin:"))
                 fCommandLine = true;
 
@@ -561,7 +561,7 @@ bool AppInit2()
 
     if (nScriptCheckThreads) {
         printf("Using %u threads for script verification\n", nScriptCheckThreads);
-        for (int i=0; i<nScriptCheckThreads-1; i++)
+        for (int i=0; i<nScriptCheckThreads-1; ++i)
             NewThread(ThreadScriptCheck, NULL);
     }
 
@@ -616,7 +616,7 @@ bool AppInit2()
                 return InitError(strprintf(_("Unknown network specified in -onlynet: '%s'"), snet.c_str()));
             nets.insert(net);
         }
-        for (int n = 0; n < NET_MAX; n++) {
+        for (int n = 0; n < NET_MAX; ++n) {
             enum Network net = (enum Network)n;
             if (!nets.count(net))
                 SetLimited(net);
@@ -824,7 +824,7 @@ bool AppInit2()
                 block.BuildMerkleTree();
                 block.print();
                 printf("\n");
-                nFound++;
+                ++nFound;
             }
         }
         if (nFound == 0)

@@ -154,7 +154,7 @@ bool Lookup(const char *pszName, std::vector<CService>& vAddr, uint16_t portDefa
     if (!fRet)
         return false;
     vAddr.resize(vIP.size());
-    for (unsigned int i = 0; i < vIP.size(); i++)
+    for (unsigned int i = 0; i < vIP.size(); ++i)
         vAddr[i] = CService(vIP[i], port);
     return true;
 }
@@ -476,7 +476,7 @@ bool HaveNameProxy() {
 
 bool IsProxy(const CNetAddr &addr) {
     LOCK(cs_proxyInfos);
-    for (int i = 0; i < NET_MAX; i++) {
+    for (int i = 0; i < NET_MAX; ++i) {
         if (proxyInfo[i].second && (addr == (CNetAddr)proxyInfo[i].first))
             return true;
     }
@@ -573,7 +573,7 @@ bool CNetAddr::SetSpecial(const std::string &strName)
         if (vchAddr.size() != 16-sizeof(pchOnionCat))
             return false;
         memcpy(ip, pchOnionCat, sizeof(pchOnionCat));
-        for (unsigned int i=0; i<16-sizeof(pchOnionCat); i++)
+        for (unsigned int i=0; i<16-sizeof(pchOnionCat); ++i)
             ip[i + sizeof(pchOnionCat)] = vchAddr[i];
         return true;
     }
@@ -582,7 +582,7 @@ bool CNetAddr::SetSpecial(const std::string &strName)
         if (vchAddr.size() != 16-sizeof(pchGarliCat))
             return false;
         memcpy(ip, pchOnionCat, sizeof(pchGarliCat));
-        for (unsigned int i=0; i<16-sizeof(pchGarliCat); i++)
+        for (unsigned int i=0; i<16-sizeof(pchGarliCat); ++i)
             ip[i + sizeof(pchGarliCat)] = vchAddr[i];
         return true;
     }
@@ -912,7 +912,7 @@ std::vector<unsigned char> CNetAddr::GetGroup() const
     while (nBits >= 8)
     {
         vchRet.push_back(GetByte(15 - nStartByte));
-        nStartByte++;
+        ++nStartByte;
         nBits -= 8;
     }
     if (nBits > 0)

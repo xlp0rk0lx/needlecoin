@@ -115,7 +115,7 @@ aes_2rounds_all(sph_u64 W[16][2],
 	sph_u32 K2 = *pK2;
 	sph_u32 K3 = *pK3;
 
-	for (n = 0; n < 16; n ++) {
+	for (n = 0; n < 16; ++n) {
 		sph_u64 Wl = W[n][0];
 		sph_u64 Wh = W[n][1];
 		sph_u32 X0 = (sph_u32)Wl;
@@ -228,7 +228,7 @@ mix_column(sph_u64 W[16][2], int ia, int ib, int ic, int id)
 {
 	int n;
 
-	for (n = 0; n < 2; n ++) {
+	for (n = 0; n < 2; ++n) {
 		sph_u64 a = W[ia][n];
 		sph_u64 b = W[ib][n];
 		sph_u64 c = W[ic][n];

@@ -41,7 +41,7 @@ void CBloomFilter::insert(const vector<unsigned char>& vKey)
 {
     if (isFull)
         return;
-    for (unsigned int i = 0; i < nHashFuncs; i++)
+    for (unsigned int i = 0; i < nHashFuncs; ++i)
     {
         unsigned int nIndex = Hash(i, vKey);
         // Sets bit nIndex of vData
@@ -70,7 +70,7 @@ bool CBloomFilter::contains(const vector<unsigned char>& vKey) const
         return true;
     if (isEmpty)
         return false;
-    for (unsigned int i = 0; i < nHashFuncs; i++)
+    for (unsigned int i = 0; i < nHashFuncs; ++i)
     {
         unsigned int nIndex = Hash(i, vKey);
         // Checks bit nIndex of vData
@@ -111,7 +111,7 @@ bool CBloomFilter::IsRelevantAndUpdate(const CTransaction& tx, const uint256& ha
     if (contains(hash))
         fFound = true;
 
-    for (unsigned int i = 0; i < tx.vout.size(); i++)
+    for (unsigned int i = 0; i < tx.vout.size(); ++i)
     {
         const CTxOut& txout = tx.vout[i];
         // Match if the filter contains any arbitrary script data element in any scriptPubKey in tx
@@ -172,7 +172,7 @@ void CBloomFilter::UpdateEmptyFull()
 {
     bool full = true;
     bool empty = true;
-    for (unsigned int i = 0; i < vData.size(); i++)
+    for (unsigned int i = 0; i < vData.size(); ++i)
     {
         full &= vData[i] == 0xff;
         empty &= vData[i] == 0;
