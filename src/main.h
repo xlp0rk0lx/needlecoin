@@ -35,7 +35,7 @@ class CNode;
 //
 
 // Little hack for speedup sync
-static const int SKIP_VALIDATION_HEIGHT = 105347;
+static const int SKIP_VALIDATION_HEIGHT = 315000;
 
 
 static const int LAST_POW_BLOCK = 2147483646; // PoW always on

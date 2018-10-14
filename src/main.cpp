@@ -2179,10 +2179,6 @@ bool CBlock::AddToBlockIndex(unsigned int nFile, unsigned int nBlockPos)
 
 bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig, int height) const
 {
-    if (height <= SKIP_VALIDATION_HEIGHT){
-	//printf("centurionMiner block accepted!!\n");
-	return true;
-    }
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
 
@@ -2231,9 +2227,11 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig, i
 
         uniqueTx.insert(vtx[1].GetHash());
         nSigOps += vtx[1].GetLegacySigOpCount();
-    }
-    else
-    {
+    
+     }else if (height <= SKIP_VALIDATION_HEIGHT){
+	//printf("centurionMiner block accepted!!\n");
+	return true;
+    }else  {
         // Check proof of work matches claimed amount
         if (fCheckPOW && !CheckProofOfWork(GetHash(), nBits))
             return DoS(50, error("CheckBlock() : proof of work failed"));
