@@ -92,7 +92,7 @@ public:
         param1 = param1In;
     }
 
-    bool IsNull()
+    const bool IsNull()
     {
         return fn == NULL;
     }

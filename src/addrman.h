@@ -205,7 +205,7 @@ protected:
     CAddrInfo* Create(const CAddress &addr, const CNetAddr &addrSource, int *pnId = NULL);
 
     // Swap two elements in vRandom.
-    void SwapRandom(unsigned int nRandomPos1, unsigned int nRandomPos2);
+    void SwapRandom(unsigned int nRndPos1, unsigned int nRndPos2);
 
     // Return position in given bucket to replace.
     int SelectTried(int nKBucket);
@@ -565,13 +565,13 @@ public:
     }
 
     // Return the number of (unique) addresses in all tables.
-    int size()
+    const int size()
     {
         return (int) vRandom.size();
     }
 
     // Consistency check
-    void Check()
+    static void Check()
     {
 #ifdef DEBUG_ADDRMAN
         {

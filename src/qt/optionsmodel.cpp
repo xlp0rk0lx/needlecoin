@@ -64,10 +64,7 @@ void OptionsModel::Init()
     nDisplayUnit = settings.value("nDisplayUnit", BitcoinUnits::BTC).toInt();
     bDisplayAddresses = settings.value("bDisplayAddresses", false).toBool();
     if (!settings.contains("strThirdPartyTxUrls")) {
-        if(fTestNet)
-            settings.setValue("strThirdPartyTxUrls", "");
-        else
-            settings.setValue("strThirdPartyTxUrls", "");
+	settings.setValue("strThirdPartyTxUrls", "");
     }
     strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();

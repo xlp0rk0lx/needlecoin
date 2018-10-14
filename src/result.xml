@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="1.83"/>
+    <errors>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fRead&apos; is always false" verbose="Condition &apos;fRead&apos; is always false" cwe="570">
+            <location file="/opt/needlecoin/src/netbase.h" line="125" info="Condition &apos;fRead&apos; is always false"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="125" info="Assignment &apos;fRead=false&apos;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fRead&apos; is always true" verbose="Condition &apos;fRead&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/netbase.h" line="125" info="Condition &apos;fRead&apos; is always true"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="125" info="Assignment &apos;fRead=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fRead&apos; is always false" verbose="Condition &apos;fRead&apos; is always false" cwe="570">
+            <location file="/opt/needlecoin/src/protocol.h" line="83" info="Condition &apos;fRead&apos; is always false"/>
+            <location file="/opt/needlecoin/src/protocol.h" line="83" info="Assignment &apos;fRead=false&apos;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fRead&apos; is always true" verbose="Condition &apos;fRead&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/protocol.h" line="83" info="Condition &apos;fRead&apos; is always true"/>
+            <location file="/opt/needlecoin/src/protocol.h" line="83" info="Assignment &apos;fRead=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fWrite&apos; is always false" verbose="Condition &apos;fWrite&apos; is always false" cwe="570">
+            <location file="/opt/needlecoin/src/addrman.h" line="250" info="Condition &apos;fWrite&apos; is always false"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="250" info="Assignment &apos;fWrite=false&apos;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fWrite&apos; is always true" verbose="Condition &apos;fWrite&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/addrman.h" line="250" info="Condition &apos;fWrite&apos; is always true"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="250" info="Assignment &apos;fWrite=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected. See also: https://www.securecoding.cert.org/confluence/display/cplusplus/EXP05-CPP.+Do+not+use+C-style+casts." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.h" line="83"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected. See also: https://www.securecoding.cert.org/confluence/display/cplusplus/EXP05-CPP.+Do+not+use+C-style+casts." cwe="398">
+            <location file="/opt/needlecoin/src/addrman.h" line="48"/>
+        </error>
+        <error id="invalidPointerCast" severity="portability" msg="Casting from float* to char* is not portable due to different binary data representations on different platforms." verbose="Casting from float* to char* is not portable due to different binary data representations on different platforms." cwe="704" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="187"/>
+        </error>
+        <error id="invalidPointerCast" severity="portability" msg="Casting from double* to char* is not portable due to different binary data representations on different platforms." verbose="Casting from double* to char* is not portable due to different binary data representations on different platforms." cwe="704" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="188"/>
+        </error>
+        <error id="invalidPointerCast" severity="portability" msg="Casting from float* to char* is not portable due to different binary data representations on different platforms." verbose="Casting from float* to char* is not portable due to different binary data representations on different platforms." cwe="704" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="201"/>
+        </error>
+        <error id="invalidPointerCast" severity="portability" msg="Casting from double* to char* is not portable due to different binary data representations on different platforms." verbose="Casting from double* to char* is not portable due to different binary data representations on different platforms." cwe="704" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="202"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;SwapRandom&apos; argument 1 names different: declaration &apos;nRandomPos1&apos; definition &apos;nRndPos1&apos;." verbose="Function &apos;SwapRandom&apos; argument 1 names different: declaration &apos;nRandomPos1&apos; definition &apos;nRndPos1&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/addrman.cpp" line="106"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="208"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;SwapRandom&apos; argument 2 names different: declaration &apos;nRandomPos2&apos; definition &apos;nRndPos2&apos;." verbose="Function &apos;SwapRandom&apos; argument 2 names different: declaration &apos;nRandomPos2&apos; definition &apos;nRndPos2&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/addrman.cpp" line="106"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="208"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/netbase.h" line="85"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/netbase.h" line="125"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="43"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="83"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="119"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/addrman.h" line="48"/>
+        </error>
+        <error id="postfixOperator" severity="performance" msg="Prefer prefix ++/-- operators for non-primitive types." verbose="Prefix ++/-- operators should be preferred for non-primitive types. Pre-increment/decrement can be more efficient than post-increment/decrement. Post-increment/decrement usually involves keeping a copy of the previous value around and adds a little extra code." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="51"/>
+        </error>
+        <error id="arrayIndexThenCheck" severity="style" msg="Array index &apos;i&apos; is used before limits check." verbose="Defensive programming: The variable &apos;i&apos; is used as an array index before it is checked that is within limits. This can mean that the array might be accessed out of bounds. Reorder conditions such as &apos;(a[i] &amp;&amp; i &lt; 10)&apos; to &apos;(i &lt; 10 &amp;&amp; a[i])&apos;. That way the array will not be accessed if the index is out of limits." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="183"/>
+        </error>
+        <error id="arrayIndexThenCheck" severity="style" msg="Array index &apos;i&apos; is used before limits check." verbose="Defensive programming: The variable &apos;i&apos; is used as an array index before it is checked that is within limits. This can mean that the array might be accessed out of bounds. Reorder conditions such as &apos;(a[i] &amp;&amp; i &lt; 10)&apos; to &apos;(i &lt; 10 &amp;&amp; a[i])&apos;. That way the array will not be accessed if the index is out of limits." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="200"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;MemoryPageLocker::Lock&apos; can be static." verbose="The member function &apos;MemoryPageLocker::Lock&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/allocators.h" line="144"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;MemoryPageLocker::Unlock&apos; can be static." verbose="The member function &apos;MemoryPageLocker::Unlock&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/allocators.h" line="155"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CDataStream::operator[]&apos; can be const." verbose="The member function &apos;CDataStream::operator[]&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="949"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CDataStream::exceptions&apos; can be const." verbose="The member function &apos;CDataStream::exceptions&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1066"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CDataStream::in_avail&apos; can be const." verbose="The member function &apos;CDataStream::in_avail&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1069"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CDataStream::GetType&apos; can be const." verbose="The member function &apos;CDataStream::GetType&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1072"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CDataStream::GetVersion&apos; can be const." verbose="The member function &apos;CDataStream::GetVersion&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1074"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAutoFile::operator!&apos; can be const." verbose="The member function &apos;CAutoFile::operator!&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1215"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAutoFile::exceptions&apos; can be const." verbose="The member function &apos;CAutoFile::exceptions&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1231"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAutoFile::GetType&apos; can be const." verbose="The member function &apos;CAutoFile::GetType&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1235"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAutoFile::GetVersion&apos; can be const." verbose="The member function &apos;CAutoFile::GetVersion&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1237"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CBufferedFile::GetPos&apos; can be const." verbose="The member function &apos;CBufferedFile::GetPos&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/serialize.h" line="1372"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CSemaphoreGrant::operatorbool&apos; can be const." verbose="The member function &apos;CSemaphoreGrant::operatorbool&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/sync.h" line="207"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAddrMan::size&apos; can be const." verbose="The member function &apos;CAddrMan::size&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/addrman.h" line="568"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;CAddrMan::Check&apos; can be static." verbose="The member function &apos;CAddrMan::Check&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/addrman.h" line="574"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 160 &gt;::operator++&apos; can be const." verbose="The member function &apos;base_uint &lt; 160 &gt;::operator++&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="188"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 160 &gt;::operator--&apos; can be const." verbose="The member function &apos;base_uint &lt; 160 &gt;::operator--&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="205"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 256 &gt;::operator++&apos; can be const." verbose="The member function &apos;base_uint &lt; 256 &gt;::operator++&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="188"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 256 &gt;::operator--&apos; can be const." verbose="The member function &apos;base_uint &lt; 256 &gt;::operator--&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="205"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 512 &gt;::operator++&apos; can be const." verbose="The member function &apos;base_uint &lt; 512 &gt;::operator++&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="188"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;base_uint &lt; 512 &gt;::operator--&apos; can be const." verbose="The member function &apos;base_uint &lt; 512 &gt;::operator--&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/uint256.h" line="205"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CVarInt&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CVarInt&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/serialize.h" line="401"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CNetAddr&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CNetAddr&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/netbase.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CService&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CService&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/netbase.h" line="101"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint160&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint160&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="423"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint160&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint160&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="436"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="538"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint256&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint256&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="551"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint512&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint512&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="649"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;uint512&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;uint512&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/uint256.h" line="662"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CSemaphore&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CSemaphore&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/sync.h" line="131"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;LockedPageManagerBase &lt; MemoryPageLocker &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;LockedPageManagerBase &lt; MemoryPageLocker &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/allocators.h" line="48"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;operator()&apos; argument 1 names different: declaration &apos;no&apos; definition &apos;id&apos;." verbose="Function &apos;operator()&apos; argument 1 names different: declaration &apos;no&apos; definition &apos;id&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/base58.h" line="139"/>
+            <location file="/opt/needlecoin/src/base58.h" line="94"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/key.h" line="77"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/crypter.h" line="43"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected. See also: https://www.securecoding.cert.org/confluence/display/cplusplus/EXP05-CPP.+Do+not+use+C-style+casts." cwe="398">
+            <location file="/opt/needlecoin/src/alert.cpp" line="160"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/alert.h" line="42"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;nSerSize&apos; is assigned a value that is never used." verbose="Variable &apos;nSerSize&apos; is assigned a value that is never used." cwe="563">
+            <location file="/opt/needlecoin/src/alert.h" line="79"/>
+        </error>
+        <error id="useInitializationList" severity="performance" msg="Variable &apos;vchOtherDerivationParameters&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;vchOtherDerivationParameters&apos; a value by passing the value to the constructor in the initialization list." cwe="398">
+            <location file="/opt/needlecoin/src/crypter.h" line="57"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CAutoBN_CTX::operator!&apos; can be const." verbose="The member function &apos;CAutoBN_CTX::operator!&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/bignum.h" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="80"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="81"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="82"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="83"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="85"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="86"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="87"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBigNum&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/bignum.h" line="88"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CKeyID&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CKeyID&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/key.h" line="53"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CScriptID&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CScriptID&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/key.h" line="61"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CPubKey&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CPubKey&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/key.h" line="72"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBitcoinAddressVisitor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBitcoinAddressVisitor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/base58.h" line="91"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/base58.h" line="117"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/base58.h" line="122"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CBitcoinAddress&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/base58.h" line="127"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &apos;secure_allocator &lt; unsigned char &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Struct &apos;secure_allocator &lt; unsigned char &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/allocators.h" line="198"/>
+        </error>
+        <error id="reademptycontainer" severity="style" msg="Reading from empty STL container &apos;str&apos;" verbose="Reading from empty STL container &apos;str&apos;" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/script.h" line="249"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CRequestTracker::IsNull&apos; can be const." verbose="The member function &apos;CRequestTracker::IsNull&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/net.h" line="95"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;mruset &lt; CInv &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;mruset &lt; CInv &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/mruset.h" line="26"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;addrIn&apos; should be passed by reference." verbose="Parameter &apos;addrIn&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file="/opt/needlecoin/src/net.h" line="226"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fOk&apos; is always true" verbose="Condition &apos;fOk&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/crypter.cpp" line="67" info="Condition &apos;fOk&apos; is always true"/>
+            <location file="/opt/needlecoin/src/crypter.cpp" line="64" info="Assignment &apos;fOk=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fOk&apos; is always true" verbose="Condition &apos;fOk&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/crypter.cpp" line="94" info="Condition &apos;fOk&apos; is always true"/>
+            <location file="/opt/needlecoin/src/crypter.cpp" line="91" info="Assignment &apos;fOk=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &apos;secure_allocator &lt; char &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Struct &apos;secure_allocator &lt; char &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/allocators.h" line="198"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;PAGESIZE&apos; since the value of &apos;PAGESIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;PAGESIZE&apos; since the value of &apos;PAGESIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/opt/needlecoin/src/allocators.h" line="127"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;PRIO_THREAD&apos; since the value of &apos;PRIO_THREAD&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;PRIO_THREAD&apos; since the value of &apos;PRIO_THREAD&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/opt/needlecoin/src/util.h" line="567"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CNetAddr&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CNetAddr&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/netbase.h" line="77"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;CService&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;CService&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/netbase.h" line="122"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/netbase.h" line="85"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/netbase.h" line="125"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/key.h" line="77"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/crypter.h" line="43"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fWrite&apos; is always false" verbose="Condition &apos;fWrite&apos; is always false" cwe="570">
+            <location file="/opt/needlecoin/src/addrman.h" line="384" info="Condition &apos;fWrite&apos; is always false"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="384" info="Assignment &apos;fWrite=false&apos;, assigned value is 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;fWrite&apos; is always true" verbose="Condition &apos;fWrite&apos; is always true" cwe="571">
+            <location file="/opt/needlecoin/src/addrman.h" line="384" info="Condition &apos;fWrite&apos; is always true"/>
+            <location file="/opt/needlecoin/src/addrman.h" line="384" info="Assignment &apos;fWrite=true&apos;, assigned value is 1"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="43"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="83"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/protocol.h" line="119"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/addrman.h" line="48"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/crypto/scrypt/intrin/scrypt-sse2.cpp" line="116"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/alert.h" line="42"/>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: mapUnkIds" verbose="Unused variable: mapUnkIds" cwe="563">
+            <location file="/opt/needlecoin/src/alert.h" line="79"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Semantic_actions&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Semantic_actions&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_reader_template.h" line="206"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Json_grammer&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Json_grammer&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_reader_template.h" line="376"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;definition&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;definition&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_reader_template.h" line="416"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &apos;Multi_pass_iters&apos; has a constructor with 1 argument that is not explicit." verbose="Struct &apos;Multi_pass_iters&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_reader_template.h" line="583"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="41"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="47"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="49"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="41"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="47"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: string &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="49"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="41"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="47"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_map &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="49"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="41"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="42"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="43"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="44"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="45"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="47"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="48"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;json_spirit :: Value_impl &lt; json_spirit :: Config_vector &lt; std :: wstring &gt; &gt;&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/json/json_spirit_value.h" line="49"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/autocompact_test.cc" line="106"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/corruption_test.cc" line="202"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SharedState::total&apos; is not initialized in the constructor." verbose="Member variable &apos;SharedState::total&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="290"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SharedState::num_initialized&apos; is not initialized in the constructor." verbose="Member variable &apos;SharedState::num_initialized&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="290"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SharedState::num_done&apos; is not initialized in the constructor." verbose="Member variable &apos;SharedState::num_done&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="290"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SharedState::start&apos; is not initialized in the constructor." verbose="Member variable &apos;SharedState::start&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="290"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;ThreadState::shared&apos; is not initialized in the constructor." verbose="Member variable &apos;ThreadState::shared&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="300"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="338"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="359"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::Crc32c&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::Crc32c&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="618"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::AcquireLoad&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::AcquireLoad&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="637"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::SnappyCompress&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::SnappyCompress&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="653"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::SnappyUncompress&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::SnappyUncompress&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="678"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Struct &apos;ThreadState&apos; has a constructor with 1 argument that is not explicit." verbose="Struct &apos;ThreadState&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_bench.cc" line="300"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;CKey::VerifyCompact&apos; can be const." verbose="The member function &apos;CKey::VerifyCompact&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/key.h" line="158"/>
+            <location file="/opt/needlecoin/src/key.cpp" line="510"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Writer::batch&apos; is not initialized in the constructor." verbose="Member variable &apos;Writer::batch&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_impl.cc" line="48"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Writer::sync&apos; is not initialized in the constructor." verbose="Member variable &apos;Writer::sync&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_impl.cc" line="48"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Writer::done&apos; is not initialized in the constructor." verbose="Member variable &apos;Writer::done&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/db_impl.cc" line="48"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;ParseKey&apos; argument 1 names different: declaration &apos;key&apos; definition &apos;ikey&apos;." verbose="Function &apos;ParseKey&apos; argument 1 names different: declaration &apos;key&apos; definition &apos;ikey&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/db/db_iter.cc" line="130"/>
+            <location file="/opt/needlecoin/src/leveldb/db/db_iter.cc" line="91"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/db_test.cc" line="511"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/dbformat_test.cc" line="49"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/fault_injection_test.cc" line="540"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/filename_test.cc" line="16"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/log_test.cc" line="270"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/recovery_test.cc" line="159"/>
+        </error>
+        <error id="noCopyConstructor" severity="style" msg="class &apos;Repairer&apos; does not have a copy constructor which is recommended since the class contains a pointer to allocated memory." verbose="class &apos;Repairer&apos; does not have a copy constructor which is recommended since the class contains a pointer to allocated memory." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/repair.cc" line="45"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/skiplist_test.cc" line="31"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/version_edit_test.cc" line="22"/>
+        </error>
+        <error id="truncLongCastAssignment" severity="style" msg="int result is assigned to long variable. If the variable is long to avoid loss of information, then you have loss of information." verbose="int result is assigned to long variable. If the variable is long to avoid loss of information, then there is loss of information. To avoid loss of information you must cast a calculation operand to long, for example &apos;l = a * b;&apos; =&gt; &apos;l = (long)a * b;&apos;." cwe="197">
+            <location file="/opt/needlecoin/src/leveldb/db/version_set.cc" line="27"/>
+        </error>
+        <error id="truncLongCastAssignment" severity="style" msg="int result is assigned to long variable. If the variable is long to avoid loss of information, then you have loss of information." verbose="int result is assigned to long variable. If the variable is long to avoid loss of information, then there is loss of information. To avoid loss of information you must cast a calculation operand to long, for example &apos;l = a * b;&apos; =&gt; &apos;l = (long)a * b;&apos;." cwe="197">
+            <location file="/opt/needlecoin/src/leveldb/db/version_set.cc" line="32"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;LevelFileNumIterator::value_buf_&apos; is not initialized in the constructor." verbose="Member variable &apos;LevelFileNumIterator::value_buf_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/db/version_set.cc" line="156"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/version_set_test.cc" line="51"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/db/write_batch_test.cc" line="57"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::start_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::start_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="315"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::last_op_finish_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::last_op_finish_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="315"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::done_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::done_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="315"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::next_report_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::next_report_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="315"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="194"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_sqlite3.cc" line="206"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::db_num_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::db_num_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="291"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::start_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::start_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="291"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::last_op_finish_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::last_op_finish_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="291"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::done_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::done_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="291"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;Benchmark::next_report_&apos; is not initialized in the constructor." verbose="Member variable &apos;Benchmark::next_report_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="291"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintWarnings&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="169"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be static." verbose="The member function &apos;leveldb::Benchmark::PrintEnvironment&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/doc/bench/db_bench_tree_db.cc" line="181"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;WritableFileImpl&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;WritableFileImpl&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/helpers/memenv/memenv.cc" line="205"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/helpers/memenv/memenv_test.cc" line="28"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/issues/issue178_test.cc" line="30"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/issues/issue200_test.cc" line="16"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/table/filter_block_test.cc" line="46"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;EmptyIterator&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;EmptyIterator&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/table/iterator.cc" line="44"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/table/table_test.cc" line="648"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/arena_test.cc" line="14"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/bloom_test.cc" line="89"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;LRUCache::capacity_&apos; is not initialized in the constructor." verbose="Member variable &apos;LRUCache::capacity_&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/leveldb/util/cache.cc" line="200"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::::LRUCache::LRU_Remove&apos; can be static." verbose="The member function &apos;leveldb::::LRUCache::LRU_Remove&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/util/cache.cc" line="175"/>
+            <location file="/opt/needlecoin/src/leveldb/util/cache.cc" line="242"/>
+        </error>
+        <error id="functionStatic" severity="performance" msg="Technically the member function &apos;leveldb::::LRUCache::LRU_Append&apos; can be static." verbose="The member function &apos;leveldb::::LRUCache::LRU_Append&apos; can be made a static function. Making a function static can bring a performance benefit since no &apos;this&apos; instance is passed to the function. This change should not cause compiler errors but it does not necessarily make sense conceptually. Think about your design and the task of the function first - is it a function that must not access members of class instances?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/leveldb/util/cache.cc" line="176"/>
+            <location file="/opt/needlecoin/src/leveldb/util/cache.cc" line="247"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/cache_test.cc" line="73"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/coding_test.cc" line="13"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/crc32c_test.cc" line="13"/>
+        </error>
+        <error id="readdirCalled" severity="portability" msg="Non reentrant function &apos;readdir&apos; called. For threadsafe applications it is recommended to use the reentrant replacement function &apos;readdir_r&apos;." verbose="Non reentrant function &apos;readdir&apos; called. For threadsafe applications it is recommended to use the reentrant replacement function &apos;readdir_r&apos;." cwe="477">
+            <location file="/opt/needlecoin/src/leveldb/util/env_posix.cc" line="378"/>
+        </error>
+        <error id="usleepCalled" severity="style" msg="Obsolescent function &apos;usleep&apos; called. It is recommended to use &apos;nanosleep&apos; or &apos;setitimer&apos; instead." verbose="The obsolescent function &apos;usleep&apos; is called. POSIX.1-2001 declares usleep() function obsolescent and POSIX.1-2008 removes it. It is recommended that new applications use the &apos;nanosleep&apos; or &apos;setitimer&apos; function." cwe="477">
+            <location file="/opt/needlecoin/src/leveldb/util/env_posix.cc" line="506"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/env_test.cc" line="28"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="/opt/needlecoin/src/leveldb/util/hash_test.cc" line="12"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;ConnectSocket&apos; argument 1 names different: declaration &apos;addr&apos; definition &apos;addrDest&apos;." verbose="Function &apos;ConnectSocket&apos; argument 1 names different: declaration &apos;addr&apos; definition &apos;addrDest&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="486"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="150"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;SetIP&apos; argument 1 names different: declaration &apos;ip&apos; definition &apos;ipIn&apos;." verbose="Function &apos;SetIP&apos; argument 1 names different: declaration &apos;ip&apos; definition &apos;ipIn&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="561"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="46"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;CService&apos; argument 1 names different: declaration &apos;ip&apos; definition &apos;cip&apos;." verbose="Function &apos;CService&apos; argument 1 names different: declaration &apos;ip&apos; definition &apos;cip&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="1025"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="99"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." verbose="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="1025"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="99"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." verbose="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="1029"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="100"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;SO_NOSIGPIPE&apos; since the value of &apos;SO_NOSIGPIPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;SO_NOSIGPIPE&apos; since the value of &apos;SO_NOSIGPIPE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="345"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;CNetAddr&apos; argument 1 names different: declaration &apos;pipv6Addr&apos; definition &apos;ipv6Addr&apos;." verbose="Function &apos;CNetAddr&apos; argument 1 names different: declaration &apos;pipv6Addr&apos; definition &apos;ipv6Addr&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="604"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="77"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." verbose="Function &apos;CService&apos; argument 2 names different: declaration &apos;port&apos; definition &apos;portIn&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/netbase.cpp" line="1034"/>
+            <location file="/opt/needlecoin/src/netbase.h" line="121"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;clen&apos; can be reduced." verbose="The scope of the variable &apos;clen&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/pbkdf2.cpp" line="108"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;CMessageHeader::pchMessageStart&apos; is not initialized in the constructor." verbose="Member variable &apos;CMessageHeader::pchMessageStart&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.cpp" line="21"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;CMessageHeader::pchMessageStart&apos; is not initialized in the constructor." verbose="Member variable &apos;CMessageHeader::pchMessageStart&apos; is not initialized in the constructor." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.cpp" line="30"/>
+        </error>
+        <error id="useInitializationList" severity="performance" msg="Variable &apos;hash&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;hash&apos; a value by passing the value to the constructor in the initialization list." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.cpp" line="99"/>
+        </error>
+        <error id="useInitializationList" severity="performance" msg="Variable &apos;hash&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;hash&apos; a value by passing the value to the constructor in the initialization list." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.cpp" line="105"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;ipIn&apos; should be passed by reference." verbose="Parameter &apos;ipIn&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398">
+            <location file="/opt/needlecoin/src/protocol.cpp" line="83"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;HelpMessageBox&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;HelpMessageBox&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/qt/guiutil.h" line="115"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;emitDataChanged&apos; argument 1 names different: declaration &apos;index&apos; definition &apos;idx&apos;." verbose="Function &apos;emitDataChanged&apos; argument 1 names different: declaration &apos;index&apos; definition &apos;idx&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/addresstablemodel.cpp" line="423"/>
+            <location file="/opt/needlecoin/src/qt/addresstablemodel.h" line="79"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;AddressTableEntry::type&apos; is not initialized in the constructor." verbose="Member variable &apos;AddressTableEntry::type&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/addresstablemodel.cpp" line="25"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;value&apos; argument 1 names different: declaration &apos;valid&apos; definition &apos;valid_out&apos;." verbose="Function &apos;value&apos; argument 1 names different: declaration &apos;valid&apos; definition &apos;valid_out&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/bitcoinamountfield.cpp" line="118"/>
+            <location file="/opt/needlecoin/src/qt/bitcoinamountfield.h" line="20"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;setDisplayUnit&apos; argument 1 names different: declaration &apos;unit&apos; definition &apos;newUnit&apos;." verbose="Function &apos;setDisplayUnit&apos; argument 1 names different: declaration &apos;unit&apos; definition &apos;newUnit&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/bitcoinamountfield.cpp" line="165"/>
+            <location file="/opt/needlecoin/src/qt/bitcoinamountfield.h" line="29"/>
+        </error>
+        <error id="noConstructor" severity="style" msg="The class &apos;BitcoinAmountField&apos; does not have a constructor." verbose="The class &apos;BitcoinAmountField&apos; does not have a constructor although it has private member variables. Member variables of builtin types are left uninitialized when the class is instantiated. That may cause bugs or undefined behavior." cwe="398">
+            <location file="/opt/needlecoin/src/qt/bitcoinamountfield.h" line="13"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;format&apos; argument 2 names different: declaration &apos;amount&apos; definition &apos;n&apos;." verbose="Function &apos;format&apos; argument 2 names different: declaration &apos;amount&apos; definition &apos;n&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/bitcoinunits.cpp" line="88"/>
+            <location file="/opt/needlecoin/src/qt/bitcoinunits.h" line="45"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;format&apos; argument 3 names different: declaration &apos;plussign&apos; definition &apos;fPlus&apos;." verbose="Function &apos;format&apos; argument 3 names different: declaration &apos;plussign&apos; definition &apos;fPlus&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/bitcoinunits.cpp" line="88"/>
+            <location file="/opt/needlecoin/src/qt/bitcoinunits.h" line="45"/>
+        </error>
+        <error id="cstyleCast" severity="style" msg="C-style pointer casting" verbose="C-style pointer casting detected. C++ offers four different kinds of casts as replacements: static_cast, const_cast, dynamic_cast and reinterpret_cast. A C-style cast could evaluate to any of those automatically, thus it is considered safer if the programmer explicitly states which kind of cast is expected. See also: https://www.securecoding.cert.org/confluence/display/cplusplus/EXP05-CPP.+Do+not+use+C-style+casts." cwe="398">
+            <location file="/opt/needlecoin/src/qt/coincontroltreewidget.cpp" line="26"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;COLUMN_CHECKBOX&apos; can be reduced." verbose="The scope of the variable &apos;COLUMN_CHECKBOX&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/qt/coincontroltreewidget.cpp" line="15"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;dateTimeStr&apos; argument 1 names different: declaration &apos;datetime&apos; definition &apos;date&apos;." verbose="Function &apos;dateTimeStr&apos; argument 1 names different: declaration &apos;datetime&apos; definition &apos;date&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/guiutil.cpp" line="79"/>
+            <location file="/opt/needlecoin/src/qt/guiutil.h" line="33"/>
+        </error>
+        <error id="postfixOperator" severity="performance" msg="Prefer prefix ++/-- operators for non-primitive types." verbose="Prefix ++/-- operators should be preferred for non-primitive types. Pre-increment/decrement can be more efficient than post-increment/decrement. Post-increment/decrement usually involves keeping a copy of the previous value around and adds a little extra code." cwe="398">
+            <location file="/opt/needlecoin/src/qt/guiutil.cpp" line="127"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;on_dataDirectory_textChanged&apos; argument 1 names different: declaration &apos;arg1&apos; definition &apos;dataDirStr&apos;." verbose="Function &apos;on_dataDirectory_textChanged&apos; argument 1 names different: declaration &apos;arg1&apos; definition &apos;dataDirStr&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/intro.cpp" line="232"/>
+            <location file="/opt/needlecoin/src/qt/intro.h" line="54"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;FreespaceChecker&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;FreespaceChecker&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/qt/intro.cpp" line="37"/>
+        </error>
+        <error id="unsafeClassCanLeak" severity="style" msg="Class &apos;MintingView&apos; is unsafe, &apos;MintingView::contextMenu&apos; can leak by wrong usage." verbose="The class &apos;MintingView&apos; is unsafe, wrong usage can cause memory/resource leaks for &apos;MintingView::contextMenu&apos;. This can for instance be fixed by adding proper cleanup in the destructor." cwe="398">
+            <location file="/opt/needlecoin/src/qt/mintingview.h" line="41"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;hash&apos; should be passed by reference." verbose="Parameter &apos;hash&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/transactionrecord.h" line="82"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;hash&apos; should be passed by reference." verbose="Parameter &apos;hash&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/transactionrecord.h" line="88"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;Notificator&apos; argument 2 names different: declaration &apos;trayIcon&apos; definition &apos;trayicon&apos;." verbose="Function &apos;Notificator&apos; argument 2 names different: declaration &apos;trayIcon&apos; definition &apos;trayicon&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="36"/>
+            <location file="/opt/needlecoin/src/qt/notificator.h" line="32"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::width&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::width&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::height&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::height&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::stride&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::stride&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::hasAlpha&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::hasAlpha&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::channels&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::channels&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;FreedesktopImage::bitsPerSample&apos; is not initialized in the constructor." verbose="Member variable &apos;FreedesktopImage::bitsPerSample&apos; is not initialized in the constructor." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="95"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;FreedesktopImage&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;FreedesktopImage&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398">
+            <location file="/opt/needlecoin/src/qt/notificator.cpp" line="96"/>
+        </error>
+        <error id="duplicateBranch" severity="style" msg="Found duplicate branches for &apos;if&apos; and &apos;else&apos;." verbose="Finding the same code in an &apos;if&apos; and related &apos;else&apos; branch is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/optionsmodel.cpp" line="67"/>
+            <location file="/opt/needlecoin/src/qt/optionsmodel.cpp" line="69"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;paramCount&apos; is modified but its new value is never used." verbose="Variable &apos;paramCount&apos; is modified but its new value is never used." cwe="563">
+            <location file="/opt/needlecoin/src/qt/qrcodedialog.cpp" line="119"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;nSize&apos; can be reduced." verbose="The scope of the variable &apos;nSize&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/qt/qtipcserver.cpp" line="126"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;nPriority&apos; can be reduced." verbose="The scope of the variable &apos;nPriority&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/qt/qtipcserver.cpp" line="127"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;y&apos; can be reduced." verbose="The scope of the variable &apos;y&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/qt/trafficgraphwidget.cpp" line="51"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;filterAcceptsRow&apos; argument 1 names different: declaration &apos;source_row&apos; definition &apos;sourceRow&apos;." verbose="Function &apos;filterAcceptsRow&apos; argument 1 names different: declaration &apos;source_row&apos; definition &apos;sourceRow&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/transactionfilterproxy.cpp" line="24"/>
+            <location file="/opt/needlecoin/src/qt/transactionfilterproxy.h" line="36"/>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;filterAcceptsRow&apos; argument 2 names different: declaration &apos;source_parent&apos; definition &apos;sourceParent&apos;." verbose="Function &apos;filterAcceptsRow&apos; argument 2 names different: declaration &apos;source_parent&apos; definition &apos;sourceParent&apos;." cwe="628" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/transactionfilterproxy.cpp" line="24"/>
+            <location file="/opt/needlecoin/src/qt/transactionfilterproxy.h" line="36"/>
+        </error>
+        <error id="functionConst" severity="style" msg="Technically the member function &apos;TransactionRecord::statusUpdateNeeded&apos; can be const." verbose="The member function &apos;TransactionRecord::statusUpdateNeeded&apos; can be made a const function. Making this function &apos;const&apos; should not cause compiler errors. Even though the function can be made const function technically it may not make sense conceptually. Think about your design and the task of the function first - is it a function that must not change object internal state?" cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/transactionrecord.h" line="126"/>
+            <location file="/opt/needlecoin/src/qt/transactionrecord.cpp" line="232"/>
+        </error>
+        <error id="passedByValue" severity="performance" msg="Function parameter &apos;hash&apos; should be passed by reference." verbose="Parameter &apos;hash&apos; is passed by value. It could be passed as a (const) reference which is usually faster and recommended in C++." cwe="398" inconclusive="true">
+            <location file="/opt/needlecoin/src/qt/walletmodel.cpp" line="505"/>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;req-&gt;msglen&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;req-&gt;msglen&apos; is reassigned a value before the old one has been used." cwe="563">
+            <location file="/opt/needlecoin/src/stun.cpp" line="462"/>
+            <location file="/opt/needlecoin/src/stun.cpp" line="461"/>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;attr&apos; can be reduced." verbose="The scope of the variable &apos;attr&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398">
+            <location file="/opt/needlecoin/src/stun.cpp" line="378"/>
+        </error>
+        <error id="gethostbynameCalled" severity="style" msg="Obsolescent function &apos;gethostbyname&apos; called. It is recommended to use &apos;getaddrinfo&apos; instead." verbose="Obsolescent function &apos;gethostbyname&apos; called. It is recommended to use &apos;getaddrinfo&apos; instead." cwe="477">
+            <location file="/opt/needlecoin/src/stun.cpp" line="498"/>
+        </error>
+        <error id="mismatchAllocDealloc" severity="error" msg="Mismatching allocation and deallocation: sock" verbose="Mismatching allocation and deallocation: sock" cwe="762">
+            <location file="/opt/needlecoin/src/stun.cpp" line="522"/>
+        </error>
+        <error id="stlIfStrFind" severity="performance" msg="Inefficient usage of string::find() in condition; string::compare() would be faster." verbose="Either inefficient or wrong usage of string::find(). string::compare() will be faster if string::find&apos;s result is compared with 0, because it will not scan the whole string. If your intention is to check that there are no findings in the string, you should compare with std::string::npos." cwe="597">
+            <location file="/opt/needlecoin/src/util.cpp" line="520"/>
+        </error>
+        <error id="stlIfStrFind" severity="performance" msg="Inefficient usage of string::find() in condition; string::compare() would be faster." verbose="Either inefficient or wrong usage of string::find(). string::compare() will be faster if string::find&apos;s result is compared with 0, because it will not scan the whole string. If your intention is to check that there are no findings in the string, you should compare with std::string::npos." cwe="597">
+            <location file="/opt/needlecoin/src/util.cpp" line="564"/>
+        </error>
+        <error id="useInitializationList" severity="performance" msg="Variable &apos;mutexName&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;mutexName&apos; a value by passing the value to the constructor in the initialization list." cwe="398">
+            <location file="/opt/needlecoin/src/sync.cpp" line="34"/>
+        </error>
+        <error id="useInitializationList" severity="performance" msg="Variable &apos;sourceFile&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;sourceFile&apos; a value by passing the value to the constructor in the initialization list." cwe="398">
+            <location file="/opt/needlecoin/src/sync.cpp" line="35"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;PR_SET_NAME&apos; since the value of &apos;PR_SET_NAME&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;PR_SET_NAME&apos; since the value of &apos;PR_SET_NAME&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="/opt/needlecoin/src/util.cpp" line="1460"/>
+        </error>
+        <error id="va_list_usedBeforeStarted" severity="error" msg="va_list &apos;arg_ptr&apos; used before va_start() was called." verbose="va_list &apos;arg_ptr&apos; used before va_start() was called." cwe="664">
+            <location file="/opt/needlecoin/src/util.cpp" line="321"/>
+        </error>
+        <error id="va_list_usedBeforeStarted" severity="error" msg="va_list &apos;arg_ptr&apos; used before va_start() was called." verbose="va_list &apos;arg_ptr&apos; used before va_start() was called." cwe="664">
+            <location file="/opt/needlecoin/src/util.cpp" line="324"/>
+        </error>
+        <error id="va_list_usedBeforeStarted" severity="error" msg="va_list &apos;arg_ptr&apos; used before va_start() was called." verbose="va_list &apos;arg_ptr&apos; used before va_start() was called." cwe="664">
+            <location file="/opt/needlecoin/src/util.cpp" line="328"/>
+        </error>
+        <error id="va_list_usedBeforeStarted" severity="error" msg="va_list &apos;arg_ptr&apos; used before va_start() was called." verbose="va_list &apos;arg_ptr&apos; used before va_start() was called." cwe="664">
+            <location file="/opt/needlecoin/src/util.cpp" line="326"/>
+        </error>
+    </errors>
+</results>

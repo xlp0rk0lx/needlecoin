@@ -48,8 +48,7 @@ public:
         base_uint ret;
         for (int i = 0; i < WIDTH; i++)
             ret.pn[i] = ~pn[i];
-        ret++;
-        return ret;
+        return ++ret;
     }
 
     double getdouble() const
